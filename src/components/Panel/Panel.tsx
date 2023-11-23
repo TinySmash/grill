@@ -3,10 +3,16 @@
 import Link from "next/link";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 
-function Pannel() {
+type panelProps = {
+  opened: boolean;
+};
+
+function Panel(props: panelProps) {
   return (
     <div
-      className={`w-full h-screen z-30 pt-32 px-10 pb-20 flex flex-col justify-between items-center bg-antiflash-white md:hidden`}
+      className={`w-full h-screen z-30 pt-32 px-10 pb-20 flex flex-col justify-between items-center bg-antiflash-white md:hidden transition-all ${
+        props.opened ? "translate-y-0" : "-translate-y-full"
+      } `}
     >
       <nav className="flex flex-col text-center gap-8">
         <Link
@@ -48,4 +54,4 @@ function Pannel() {
   );
 }
 
-export default Pannel;
+export default Panel;

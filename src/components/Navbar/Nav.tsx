@@ -4,10 +4,13 @@ import Logo from "@/assets/Logo.png";
 import Image from "next/image";
 import "./nav.css";
 import { useState } from "react";
-import Pannel from "../Pannel/Pannel";
+import Panel from "../Panel/Panel";
+import { useSelector, useDispatch } from "react-redux";
+import { togglePanel } from "@/redux/slices/navSlice";
 
 function Nav() {
-  const [pannelOpened, setPannelOpened] = useState(false);
+  const pannelOpened = useSelector((state: any) => state.navbar.isPanelOpened);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -21,7 +24,7 @@ function Nav() {
         ></Image>
         <button
           className="relative flex flex-col items-center justify-center w-10 h-10 active:bg-neutral-300 outline-none md:hidden"
-          onClick={() => setPannelOpened(!pannelOpened)}
+          onClick={() => dispatch(togglePanel())}
         >
           <div
             className={`absolute menu-btn-burger transition-all ${
@@ -30,7 +33,7 @@ function Nav() {
           ></div>
         </button>
       </header>
-      <Pannel />
+      <Panel opened={pannelOpened} />
     </>
   );
 }
