@@ -10,7 +10,7 @@ type panelProps = {
 function Panel(props: panelProps) {
   return (
     <div
-      className={`w-full h-screen z-30 pt-32 px-10 pb-20 flex flex-col justify-between items-center bg-antiflash-white md:hidden transition-all ${
+      className={`fixed w-full h-screen z-40 pt-32 px-10 pb-20 flex flex-col justify-between items-center bg-antiflash-white md:hidden transition-all duration-300 ${
         props.opened ? "translate-y-0" : "-translate-y-full"
       } `}
     >
