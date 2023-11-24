@@ -14,7 +14,7 @@ function Nav() {
 
   return (
     <>
-      <header className="w-full h-20 fixed md:relative flex justify-between items-center z-50 px-8 py-3">
+      <header className="w-full h-20 fixed flex justify-between items-center z-50 px-8 py-3">
         <Image
           width={75}
           height={75}
