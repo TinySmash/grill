@@ -8,6 +8,7 @@ import Panel from "../Panel/Panel";
 import { useSelector, useDispatch } from "react-redux";
 import { togglePanel } from "@/redux/slices/navSlice";
 import Link from "next/link";
+import { MdOutlineShoppingBag } from "react-icons/md";
 
 function Nav() {
   const pannelOpened = useSelector((state: any) => state.navbar.isPanelOpened);
@@ -15,7 +16,7 @@ function Nav() {
 
   return (
     <>
-      <header className="w-full h-20 fixed flex justify-between items-center z-50 px-8 py-3">
+      <header className="w-full h-20 md:h-24 xl:h-28 fixed flex justify-between items-center z-50 px-8 md:px-14 py-3">
         <Image
           width={75}
           height={75}
@@ -33,12 +34,17 @@ function Nav() {
             }`}
           ></div>
         </button>
-        <nav className="hidden md:flex gap-8 font-medium lg:text-lg bg-transparent w-fut">
+        <nav className="hidden md:flex gap-8 font-medium lg:text-lg xl:text-xl bg-transparent w-fut text-black ">
           <Link href="">Menu</Link>
           <Link href="">Why us</Link>
           <Link href="">Services</Link>
           <Link href="">Contact</Link>
         </nav>
+        <button className="hidden md:flex bg-gradient-to-r from-primary to-secondary text-antiflash-white p-[6px] xl:p-2 rounded-full border-2 border-black ">
+          <MdOutlineShoppingBag
+            style={{ color: "#32312F", fontSize: "40px" }}
+          />
+        </button>
       </header>
       <Panel opened={pannelOpened} />
     </>
