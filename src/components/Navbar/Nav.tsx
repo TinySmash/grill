@@ -7,6 +7,7 @@ import { useState } from "react";
 import Panel from "../Panel/Panel";
 import { useSelector, useDispatch } from "react-redux";
 import { togglePanel } from "@/redux/slices/navSlice";
+import Link from "next/link";
 
 function Nav() {
   const pannelOpened = useSelector((state: any) => state.navbar.isPanelOpened);
@@ -32,6 +33,12 @@ function Nav() {
             }`}
           ></div>
         </button>
+        <nav className="hidden md:flex gap-8 font-medium lg:text-lg bg-transparent w-fut">
+          <Link href="">Menu</Link>
+          <Link href="">Why us</Link>
+          <Link href="">Services</Link>
+          <Link href="">Contact</Link>
+        </nav>
       </header>
       <Panel opened={pannelOpened} />
     </>
