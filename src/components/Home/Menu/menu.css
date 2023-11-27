@@ -1,0 +1,9 @@
+.text-grill-gradient {
+  background: linear-gradient(to right, #fad61b, #c0fa1b);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-black-50 {
+  color: rgba(50, 49, 47, 0.5);
+}
