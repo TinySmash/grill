@@ -52,11 +52,11 @@ function Hero() {
 
   return (
     <div className="w-full h-auto min-h-screen relative overflow-hidden bg-primary">
-      <div
-        className="absolute md:left-0 md:-translate-x-1/3 bg-off rounded-full bg-antiflash-white transition-all duration-1000 z-10"
-        ref={bgRef}
-      ></div>
-      <section className="relative w-full h-screen text-center md:text-start pt-36 md:pt-44 px-10 lg:px-24 z-30">
+      <section className="relative w-full h-screen md:h-[110vh] max-h-[1100px] text-center md:text-start pt-36 md:pt-44 px-10 lg:px-24 z-30 overflow-hidden">
+        <div
+          className="absolute md:left-0 md:-translate-x-1/3 bg-off rounded-full bg-antiflash-white transition-all duration-1000 -z-20"
+          ref={bgRef}
+        ></div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-grill-gradient mb-3">
           Savor The Flavor
         </h1>
@@ -80,32 +80,35 @@ function Hero() {
         ></Image>
       </section>
       <section
-        className="w-full h-auto px-10 lg:px-24 my-20 flex flex-col justify-center items-center gap-10"
+        className="w-full h-auto  my-20 block text-center"
         ref={specialDishesRef}
       >
-        <h1 className="text-black text-2xl font-bold mt-16">Specials dishes</h1>
-        {data.menu
-          .filter((e: dish) => {
-            return data.special.includes(e.id);
-          })
-          .map((e: dish, index: number) => {
-            return (
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: -50, x: -20 },
-                  visible: { opacity: 100, y: 0, x: 0 },
-                }}
-                initial="hidden"
-                animate={controls}
-                transition={{ duration: 0.5, delay: index * 1 }}
-                // ref={(e) => {
-                //   specialDishesRef.current[e?.id] = e;
-                // }}
-              >
-                <Card key={e.id} dish={e} />;
-              </motion.div>
-            );
-          })}
+        <h1 className="text-black text-2xl font-bold mt-16 mb-10">
+          Specials dishes
+        </h1>
+        <ul className="list-none w-full px-10 lg:px-24 flex flex-col sm:flex-row flex-wrap justify-center items-stretch gap-10 sm:gap-5 lg:gap-10">
+          {data.menu
+            .filter((e: dish) => {
+              return data.special.includes(e.id);
+            })
+            .map((e: dish, index: number) => {
+              return (
+                <motion.div
+                  key={e?.id}
+                  variants={{
+                    hidden: { opacity: 0, y: -50, x: -20, scale: 1.2 },
+                    visible: { opacity: 100, y: 0, x: 0, scale: 1 },
+                  }}
+                  initial="hidden"
+                  animate={controls}
+                  transition={{ duration: 0.5, delay: index * 1 }}
+                  className="w-[95%] sm:w-[44%] md:w-[30%] flex-shrink-0"
+                >
+                  <Card key={e.id} dish={e} />
+                </motion.div>
+              );
+            })}
+        </ul>
       </section>
     </div>
   );
