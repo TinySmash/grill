@@ -1,0 +1,26 @@
+{
+  "menu": [
+    {
+      "id": 0,
+      "name": "Double cheeseburger",
+      "description": "A hearty duo of succulent beef patties, melted cheese, crisp lettuce, and savory sauce",
+      "price": 6.99,
+      "image": "dbl-cheese-burger.png"
+    },
+    {
+      "id": 1,
+      "name": "Mac and cheese",
+      "description": "Creamy blend of rich cheeses embracing perfectly cooked macaroni",
+      "price": 7.49,
+      "image": "mac-cheese.png"
+    },
+    {
+      "id": 2,
+      "name": "Fish salad",
+      "description": "Perfectly seasoned fish atop a bed of crisp greens, cherry tomatoes, and zesty vinaigrette",
+      "price": 14.99,
+      "image": "fish-salad.png"
+    }
+  ],
+  "special": [0, 1, 2]
+}

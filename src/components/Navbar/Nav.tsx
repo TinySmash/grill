@@ -1,9 +1,9 @@
 "use client";
 
-import Logo from "@/assets/Logo.png";
+// import Logo from "/asse";
 import Image from "next/image";
 import "./nav.css";
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 import Panel from "../Panel/Panel";
 import { useSelector, useDispatch } from "react-redux";
 import { togglePanel } from "@/redux/slices/navSlice";
@@ -13,15 +13,33 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 function Nav() {
   const pannelOpened = useSelector((state: any) => state.navbar.isPanelOpened);
   const dispatch = useDispatch();
+  const navbarRef: any = useRef<any>("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 50) {
+        navbarRef.current?.classList?.add("bg-antiflash-white");
+        navbarRef.current?.classList?.add("backdrop-blur-md");
+      } else {
+        navbarRef.current?.classList?.remove("bg-antiflash-white");
+        navbarRef.current?.classList?.remove("backdrop-blur-md");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="w-full h-20 md:h-24 xl:h-28 fixed flex justify-between items-center z-50 px-8 md:px-14 py-3">
+      <header
+        className="w-full h-20 md:h-24 xl:h-28 fixed flex justify-between items-center z-50 px-8 md:px-14 py-3 transition-all"
+        ref={navbarRef}
+      >
         <Image
           width={75}
           height={75}
           alt="Logo"
-          src={Logo}
+          src="/assets/Logo.png"
           className="h-full w-auto cursor-pointer"
         ></Image>
         <button

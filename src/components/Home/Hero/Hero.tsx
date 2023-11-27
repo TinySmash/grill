@@ -3,9 +3,31 @@ import { useEffect, useRef } from "react";
 import "./hero.css";
 import { IoIosArrowForward } from "react-icons/io";
 import Image from "next/image";
-import Hamburger from "@/assets/Burger.png";
+import Card from "@/components/Card/Card";
+import data from "@/data/data.json";
+import { motion, useAnimation, useInView } from "framer-motion";
+
+type dish = {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+};
 
 function Hero() {
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+
+    // ... rest of your useEffect logic
+
+    // Optionally, you can also scroll to the top when the component is unmounted
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
   const bgRef: any = useRef("");
   const burgerRef: any = useRef("");
   useEffect(() => {
@@ -16,6 +38,17 @@ function Hero() {
       burgerRef.current.classList.replace("burger-off", "burger-on");
     }, 900);
   }, []);
+
+  const specialDishesRef: any = useRef(null);
+  const inview = useInView(specialDishesRef, { once: true });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inview) {
+      // FIRE THE ANIMATION
+      controls.start("visible");
+    }
+  }, [inview]);
 
   return (
     <div className="w-full h-auto min-h-screen relative overflow-hidden bg-primary">
@@ -41,10 +74,38 @@ function Hero() {
           width={150}
           height={150}
           alt="Hamburger"
-          src={Hamburger}
+          src="/assets/Burger.png"
           className="absolute w-3/4 sm:w-1/2 md:w-auto md:h-4/5 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0  md:bottom-auto md:top-1/2 md:-translate-y-1/2 burger-off transition-all duration-1000"
           ref={burgerRef}
         ></Image>
+      </section>
+      <section
+        className="w-full h-auto px-10 lg:px-24 my-20 flex flex-col justify-center items-center gap-10"
+        ref={specialDishesRef}
+      >
+        <h1 className="text-black text-2xl font-bold mt-16">Specials dishes</h1>
+        {data.menu
+          .filter((e: dish) => {
+            return data.special.includes(e.id);
+          })
+          .map((e: dish, index: number) => {
+            return (
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: -50, x: -20 },
+                  visible: { opacity: 100, y: 0, x: 0 },
+                }}
+                initial="hidden"
+                animate={controls}
+                transition={{ duration: 0.5, delay: index * 1 }}
+                // ref={(e) => {
+                //   specialDishesRef.current[e?.id] = e;
+                // }}
+              >
+                <Card key={e.id} dish={e} />;
+              </motion.div>
+            );
+          })}
       </section>
     </div>
   );
