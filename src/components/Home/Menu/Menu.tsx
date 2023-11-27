@@ -31,9 +31,9 @@ function Menu() {
           initial="hidden"
           animate={controls}
           transition={{ duration: 0.5, delay: 1 }}
-          className="hidden lg:flex relative w-2/3 h-auto -left-1/3"
+          className="hidden lg:flex relative w-2/3 lg:w-1/2 h-auto -left-1/3 lg:-left-1/4"
         ></motion.img>
-        <div className="lg:absolute lg:right-24  w-full lg:w-2/5 text-center lg:text-start mt-20 xl:mt-44">
+        <div className="lg:absolute lg:right-24  w-full lg:w-2/5 text-center lg:text-start mt-20 xl:mt-36">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-grill-gradient mb-3">
             Serving Tasty Menu
           </h1>
