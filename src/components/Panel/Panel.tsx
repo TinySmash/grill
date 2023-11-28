@@ -36,13 +36,13 @@ function Panel(props: panelProps) {
           <MdOutlineRestaurantMenu className="text-bleck" />
           Why us
         </Link>
-        <Link
+        {/* <Link
           href="/"
           className="font-semibold text-2xl border-b-2 border-black text-black flex gap-2 items-center justify-center"
         >
           <MdOutlineRestaurantMenu className="text-bleck" />
           Contact
-        </Link>
+        </Link> */}
       </nav>
       <Link
         href="/"

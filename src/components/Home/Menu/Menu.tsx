@@ -4,6 +4,9 @@ import "./menu.css";
 import Image from "next/image";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { FaTruckArrowRight } from "react-icons/fa6";
+import { LuChefHat } from "react-icons/lu";
+import { IoFastFoodSharp, IoPricetags } from "react-icons/io5";
 
 function Menu() {
   const pizzaRef: any = useRef(null);
@@ -19,6 +22,9 @@ function Menu() {
 
   return (
     <div className="w-full h-auto min-h-screen px-10 lg:px-24 pt-20 bg-antiflash-white">
+      <h1 className="text-black text-2xl lg:text-5xl font-bold mt-16 mb-10 w-fit mx-auto">
+        Why choose us ?
+      </h1>
       <section className=" w-full h-auto block md:flex" ref={pizzaRef}>
         <motion.img
           ref={pizzaRef}
@@ -46,6 +52,34 @@ function Menu() {
             Explore more
           </button>
         </div>
+      </section>
+      <section className="w-full h-auto py-10">
+        <ul className="list-none flex flex-wrap justify-evenly mt-20 xl:mt-36">
+          <li className="w-[45%] md:w-1/5 md:max-w-xs p-4 md:py-10 shadow-xl flex flex-col gap-3 justify-center items-center text-center rounded-md mb-10">
+            <FaTruckArrowRight style={{ color: "#32312F", fontSize: "40px" }} />
+            <h1 className="text-black opacity-50 font-semibold md:text-lg xl:text-xl">
+              Fast delivery
+            </h1>
+          </li>
+          <li className="w-[45%] md:w-1/5 md:max-w-xs p-4 shadow-xl flex flex-col gap-3 justify-center items-center text-center rounded-md mb-10">
+            <LuChefHat style={{ color: "#32312F", fontSize: "40px" }} />
+            <h1 className="text-black opacity-50 font-semibold md:text-lg xl:text-xl">
+              Experienced staff
+            </h1>
+          </li>
+          <li className="w-[45%] md:w-1/5 md:max-w-xs p-4 shadow-xl flex flex-col gap-3 justify-center items-center text-center rounded-md mb-10">
+            <IoFastFoodSharp style={{ color: "#32312F", fontSize: "40px" }} />
+            <h1 className="text-black opacity-50 font-semibold md:text-lg xl:text-xl">
+              Diversed menu
+            </h1>
+          </li>
+          <li className="w-[45%] md:w-1/5 md:max-w-xs p-4 shadow-xl flex flex-col gap-3 justify-center items-center text-center rounded-md mb-10">
+            <IoPricetags style={{ color: "#32312F", fontSize: "40px" }} />
+            <h1 className="text-black opacity-50 font-semibold md:text-lg xl:text-xl">
+              Best prices
+            </h1>
+          </li>
+        </ul>
       </section>
     </div>
   );

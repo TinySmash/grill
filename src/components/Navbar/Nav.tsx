@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { togglePanel } from "@/redux/slices/navSlice";
 import Link from "next/link";
 import { MdOutlineShoppingBag } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
 
 function Nav() {
   const pannelOpened = useSelector((state: any) => state.navbar.isPanelOpened);
@@ -19,10 +20,10 @@ function Nav() {
     const handleScroll = () => {
       if (window.pageYOffset > 50) {
         navbarRef.current?.classList?.add("bg-antiflash-white");
-        navbarRef.current?.classList?.add("backdrop-blur-md");
+        navbarRef.current?.classList?.add("drop-shadow-xl");
       } else {
         navbarRef.current?.classList?.remove("bg-antiflash-white");
-        navbarRef.current?.classList?.remove("backdrop-blur-md");
+        navbarRef.current?.classList?.remove("drop-shadow-xl");
       }
     };
 
@@ -42,22 +43,28 @@ function Nav() {
           src="/assets/Logo.png"
           className="h-full w-auto cursor-pointer"
         ></Image>
-        <button
-          className="relative flex flex-col items-center justify-center w-10 h-10 active:bg-neutral-300 outline-none md:hidden"
-          onClick={() => dispatch(togglePanel())}
-        >
-          <div
-            className={`absolute menu-btn-burger transition-all ${
-              pannelOpened ? "menu-burger-opened" : ""
-            }`}
-          ></div>
-        </button>
+        <div className="flex items-center gap-5 md:hidden">
+          <button className="flex md:hidden bg-gradient-to-r from-primary to-secondary text-antiflash-white p-[6px] xl:p-2 rounded-full border-2 border-black ">
+            <FaLocationDot style={{ color: "#32312F", fontSize: "25px" }} />
+          </button>
+          <button
+            className="relative flex flex-col items-center justify-center w-10 h-10 active:bg-neutral-300 outline-none"
+            onClick={() => dispatch(togglePanel())}
+          >
+            <div
+              className={`absolute menu-btn-burger transition-all ${
+                pannelOpened ? "menu-burger-opened" : ""
+              }`}
+            ></div>
+          </button>
+        </div>
         <nav className="hidden md:flex gap-8 font-medium lg:text-lg xl:text-xl bg-transparent w-fut text-black ">
           <Link href="">Menu</Link>
           <Link href="">Why us</Link>
           <Link href="">Services</Link>
-          <Link href="">Contact</Link>
+          <Link href="">Location</Link>
         </nav>
+
         <button className="hidden md:flex bg-gradient-to-r from-primary to-secondary text-antiflash-white p-[6px] xl:p-2 rounded-full border-2 border-black ">
           <MdOutlineShoppingBag
             style={{ color: "#32312F", fontSize: "40px" }}
