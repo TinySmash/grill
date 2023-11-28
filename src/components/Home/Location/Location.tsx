@@ -3,7 +3,10 @@ import "../Hero/hero.css";
 
 function Location() {
   return (
-    <section className="w-full bg-antiflash-white h-screen block md:flex gap-5 md:flex-wrap md:justify-between md:items-center px-10 lg:px-24">
+    <section
+      className="w-full bg-antiflash-white h-screen block md:flex gap-5 md:flex-wrap md:justify-between md:items-center py-24 md:py-10 px-10 lg:px-24"
+      id="location"
+    >
       <div className="w-full md:w-1/2">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-grill-gradient mb-3 text-center md:text-start">
           Location

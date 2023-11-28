@@ -10,6 +10,7 @@ import { togglePanel } from "@/redux/slices/navSlice";
 import Link from "next/link";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
+import * as ReactScroll from "react-scroll";
 
 function Nav() {
   const pannelOpened = useSelector((state: any) => state.navbar.isPanelOpened);
@@ -20,10 +21,10 @@ function Nav() {
     const handleScroll = () => {
       if (window.pageYOffset > 50) {
         navbarRef.current?.classList?.add("bg-antiflash-white");
-        navbarRef.current?.classList?.add("drop-shadow-xl");
+        navbarRef.current?.classList?.add("shadow-xl");
       } else {
         navbarRef.current?.classList?.remove("bg-antiflash-white");
-        navbarRef.current?.classList?.remove("drop-shadow-xl");
+        navbarRef.current?.classList?.remove("shadow-xl");
       }
     };
 
@@ -44,9 +45,16 @@ function Nav() {
           className="h-full w-auto cursor-pointer"
         ></Image>
         <div className="flex items-center gap-5 md:hidden">
-          <button className="flex md:hidden bg-gradient-to-r from-primary to-secondary text-antiflash-white p-[6px] xl:p-2 rounded-full border-2 border-black ">
+          <ReactScroll.Link
+            to="location"
+            spy={true}
+            smooth={true}
+            className="cursor-pointer flex md:hidden bg-gradient-to-r from-primary to-secondary text-antiflash-white p-[6px] xl:p-2 rounded-full border-2 border-black "
+          >
             <FaLocationDot style={{ color: "#32312F", fontSize: "25px" }} />
-          </button>
+          </ReactScroll.Link>
+          {/* <button className="flex md:hidden bg-gradient-to-r from-primary to-secondary text-antiflash-white p-[6px] xl:p-2 rounded-full border-2 border-black ">
+          </button> */}
           <button
             className="relative flex flex-col items-center justify-center w-10 h-10 active:bg-neutral-300 outline-none"
             onClick={() => dispatch(togglePanel())}
@@ -60,9 +68,23 @@ function Nav() {
         </div>
         <nav className="hidden md:flex gap-8 font-medium lg:text-lg xl:text-xl bg-transparent w-fut text-black ">
           <Link href="">Menu</Link>
-          <Link href="">Why us</Link>
+          <ReactScroll.Link
+            to="menu"
+            spy={true}
+            smooth={true}
+            className="cursor-pointer"
+          >
+            Why us
+          </ReactScroll.Link>
           <Link href="">Services</Link>
-          <Link href="">Location</Link>
+          <ReactScroll.Link
+            to="location"
+            spy={true}
+            smooth={true}
+            className="cursor-pointer"
+          >
+            Location
+          </ReactScroll.Link>
         </nav>
 
         <button className="hidden md:flex bg-gradient-to-r from-primary to-secondary text-antiflash-white p-[6px] xl:p-2 rounded-full border-2 border-black ">
