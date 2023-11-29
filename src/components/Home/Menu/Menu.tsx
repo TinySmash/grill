@@ -22,7 +22,7 @@ function Menu() {
 
   return (
     <div
-      className="w-full h-auto min-h-screen px-10 lg:px-24 pt-20 bg-antiflash-white"
+      className="w-full h-auto px-10 lg:px-24 pt-20 bg-antiflash-white"
       id="menu"
     >
       <h1 className="text-black text-2xl lg:text-5xl font-bold mt-16 mb-10 w-fit mx-auto">

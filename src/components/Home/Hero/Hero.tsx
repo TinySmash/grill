@@ -52,7 +52,7 @@ function Hero() {
 
   return (
     <div className="w-full h-auto min-h-screen relative overflow-hidden bg-primary">
-      <section className="relative w-full h-screen md:h-[110vh] max-h-[1100px] text-center md:text-start pt-36 md:pt-44 px-10 lg:px-24 z-30 overflow-hidden">
+      <section className="relative w-full h-screen md:h-[110vh] max-h-[1100px] text-center md:text-start pt-36 md:pt-44 px-10 lg:px-24 z-30 md:overflow-hidden">
         <div
           className="absolute md:left-0 md:-translate-x-1/3 bg-off rounded-full bg-antiflash-white transition-all duration-1000 -z-20"
           ref={bgRef}

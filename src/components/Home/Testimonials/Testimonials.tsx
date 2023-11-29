@@ -11,7 +11,7 @@ function Testimonials() {
         <button>
           <IoIosArrowBack style={{ fontSize: "40px", color: "#32312F" }} />
         </button>
-        <div className="shadow-xl w-3/4 md:w-3/5 h-48 md:h-56 xl:h-72 xl:max-w-md rounded-lg max-w-sm px-5 py-7">
+        <div className="shadow-xl w-5/6 sm:w-3/4 md:w-3/5 h-auto sm:h-48 md:h-56 xl:h-72 xl:max-w-md rounded-lg max-w-sm px-5 py-7">
           <div className="w-full flex gap-5 items-center">
             <div className="w-10 h-10 bg-black opacity-10 rounded-full"></div>
             <h1 className="text-lg xl:text-2xl text-black font-semibold opacity-50">
