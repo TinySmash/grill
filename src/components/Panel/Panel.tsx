@@ -24,6 +24,7 @@ function Panel(props: panelProps) {
     >
       <nav className="flex flex-col text-center gap-8">
         <Link
+          onClick={navigatePannel}
           href="menu"
           className="font-semibold text-2xl border-b-2 border-black text-black flex gap-2 items-center justify-center"
         >
@@ -31,6 +32,7 @@ function Panel(props: panelProps) {
           Menu
         </Link>
         <Link
+          onClick={navigatePannel}
           href="/"
           className="font-semibold text-2xl border-b-2 border-black text-black flex gap-2 items-center justify-center"
         >
@@ -58,6 +60,7 @@ function Panel(props: panelProps) {
         </ReactScroll.Link>
       </nav>
       <Link
+        onClick={navigatePannel}
         href="/"
         className="px-16 py-4 text-antiflash-white text-2xl sm:text-3xl font-semibold bg-gradient-to-r from-primary to-secondary rounded-full"
       >

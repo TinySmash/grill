@@ -4,6 +4,8 @@ import "./globals.css";
 import Nav from "@/components/Navbar/Nav";
 import { Providers } from "@/redux/providers";
 import Footer from "@/components/Footer/Footer";
+// import { Suspense } from "react";
+// import Loading from "./loading";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -23,9 +25,11 @@ export default function RootLayout({
         className={`${montserrat.className} overflow-x-hidden bg-antiflash-white`}
       >
         <Providers>
+          {/* <Suspense fallback={<Loading />}> */}
           <Nav />
           {children}
           <Footer />
+          {/* </Suspense> */}
         </Providers>
       </body>
     </html>

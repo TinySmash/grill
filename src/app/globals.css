@@ -16,3 +16,45 @@
 .normal-dish-card {
   @apply w-5/12 sm:w-[30%] xl:w-[23%] px-1 py-4;
 }
+
+@keyframes burger-fall {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes burger-fall-from-top {
+  0% {
+    transform: translateY(-100vh);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.burger-loading-1 {
+  animation: burger-fall-from-top 1.5s infinite ease-in-out;
+}
+
+.burger-loading-2 {
+  animation: burger-fall-from-top 1.5s infinite ease-in-out;
+}
+
+.burger-loading-3 {
+  animation: burger-fall 1.5s infinite ease-in-out;
+}
