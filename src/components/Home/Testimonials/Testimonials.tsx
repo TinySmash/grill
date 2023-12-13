@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa6";
 
 function Testimonials() {
   return (
-    <section className="w-full h-auto pb-10 md:pb-36 px-10 lg:px-24">
+    <section className="w-full h-auto pb-10 md:pb-36 px-10 lg:px-24 mb-20">
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-grill-gradient mb-14 text-center ">
         Testimonials
       </h1>
@@ -11,7 +11,7 @@ function Testimonials() {
         <button>
           <IoIosArrowBack style={{ fontSize: "40px", color: "#32312F" }} />
         </button>
-        <div className="shadow-xl w-5/6 sm:w-3/4 md:w-3/5 h-auto sm:h-48 md:h-56 xl:h-72 xl:max-w-md rounded-lg max-w-sm px-5 py-7">
+        <div className="shadow-xl w-11/12 sm:w-3/4 md:w-3/5 h-auto sm:h-48 md:h-56 xl:h-72 xl:max-w-md rounded-lg max-w-sm px-5 py-7">
           <div className="w-full flex gap-5 items-center">
             <div className="w-10 h-10 bg-black opacity-10 rounded-full"></div>
             <h1 className="text-lg xl:text-2xl text-black font-semibold opacity-50">

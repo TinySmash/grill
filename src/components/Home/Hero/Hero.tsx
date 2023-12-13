@@ -104,7 +104,7 @@ function Hero() {
                   transition={{ duration: 0.5, delay: index * 1 }}
                   className="w-[95%] sm:w-[44%] md:w-[30%] flex-shrink-0"
                 >
-                  <Card key={e.id} dish={e} />
+                  <Card key={e.id} dish={e} special={true} />
                 </motion.div>
               );
             })}

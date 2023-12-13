@@ -5,7 +5,7 @@ import Testimonials from "@/components/Home/Testimonials/Testimonials";
 
 export default function Home() {
   return (
-    <main className="absolute w-full">
+    <main className="relative w-full">
       <Hero />
       <Menu />
       <Location />

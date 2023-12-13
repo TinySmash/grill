@@ -6,3 +6,13 @@
   padding: 0;
   margin: 0;
 }
+
+/*  MENU  */
+
+.special-dish-card {
+  @apply w-full md:max-w-[300px] xl:max-w-[370px] sm:h-[430px] md:h-full  mx-auto flex-shrink-0 px-6 py-[22px];
+}
+
+.normal-dish-card {
+  @apply w-5/12 sm:w-[30%] xl:w-[23%] px-1 py-4;
+}

@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Navbar/Nav";
 import { Providers } from "@/redux/providers";
+import Footer from "@/components/Footer/Footer";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -23,7 +24,8 @@ export default function RootLayout({
       >
         <Providers>
           <Nav />
-          <main>{children}</main>
+          {children}
+          <Footer />
         </Providers>
       </body>
     </html>
