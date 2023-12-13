@@ -7,6 +7,7 @@ import { useEffect, useRef } from "react";
 import { FaTruckArrowRight } from "react-icons/fa6";
 import { LuChefHat } from "react-icons/lu";
 import { IoFastFoodSharp, IoPricetags } from "react-icons/io5";
+import Link from "next/link";
 
 function Menu() {
   const pizzaRef: any = useRef(null);
@@ -51,9 +52,12 @@ function Menu() {
             bites to sweet delights, our menu is a symphony of flavors that
             promises to elevate your dining experience
           </p>
-          <button className="flex items-center justify-center gap-2 w-fit mx-auto lg:mx-0 text-lg font-medium bg-secondary text-black-50 px-6 py-2 rounded-full">
+          <Link
+            href="/menu"
+            className="flex items-center justify-center gap-2 w-fit mx-auto lg:mx-0 text-lg font-medium bg-secondary text-black-50 px-6 py-2 rounded-full"
+          >
             Explore more
-          </button>
+          </Link>
         </div>
       </section>
       <section className="w-full h-auto py-10">

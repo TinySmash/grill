@@ -49,7 +49,7 @@ function Nav() {
             to="location"
             spy={true}
             smooth={true}
-            className="cursor-pointer flex md:hidden bg-gradient-to-r from-primary to-secondary text-antiflash-white p-[6px] xl:p-2 rounded-full border-2 border-black "
+            className="cursor-pointer flex md:hidden bg-gradient-to-r from-primary to-secondary text-antiflash-white p-[6px] xl:p-2 rounded-full  "
           >
             <FaLocationDot style={{ color: "#32312F", fontSize: "25px" }} />
           </ReactScroll.Link>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Card from "@/components/Card/Card";
 import data from "@/data/data.json";
 import { motion, useAnimation, useInView } from "framer-motion";
+import Link from "next/link";
 
 type dish = {
   id: number;
@@ -63,10 +64,13 @@ function Hero() {
         <p className="text-black opacity-50 mb-9 md:w-1/2 lg:text-lg xl:text-2xl">
           Food tastes better when every bite is a flavor-packed journey
         </p>
-        <button className="flex items-center justify-center gap-2 w-fit mx-auto md:mx-0 text-lg md:text-xl lg:text-2xl xl:text-4xl font-medium mb-3 transition-all hover:gap-5">
+        <Link
+          href="/menu"
+          className="flex items-center justify-center gap-2 w-fit mx-auto md:mx-0 text-lg md:text-xl lg:text-2xl xl:text-4xl font-medium mb-3 transition-all hover:gap-5"
+        >
           Explore our menu
           <IoIosArrowForward style={{ fontSize: "20px", marginTop: "2px" }} />
-        </button>
+        </Link>
         {/* <button className="flex items-center justify-center gap-2 w-fit mx-auto text-lg font-medium">
           About
         </button> */}
