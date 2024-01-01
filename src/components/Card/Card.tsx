@@ -56,7 +56,7 @@ function Card(props: propsData) {
         </h1>
         <p
           className={`text-center text-black font-semibold opacity-50 mb-5  ${
-            props.special ? "xl:text-lg" : "text-xs md:text-base"
+            props.special ? "xl:text-lg" : "text-xs md:text-base hidden"
           }`}
         >
           {dish.description}
